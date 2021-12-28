@@ -3,6 +3,7 @@ html {
     box-sizing: border-box;
     font-family: sans-serif;
     font-size: 16px;
+    padding-top: 1rem;
 }
 
 
@@ -14,8 +15,9 @@ html {
     box-sizing: inherit;
 }
 
-.container h1 {
+.container {
     text-align: center;
+    background-image: linear-gradient(180deg, #3398bd 0, #5389f2 50%, #003265 90%);
 }
 
 .contact-form {
@@ -55,6 +57,11 @@ html {
     font-weight: bold;
     background-color: rgb(12, 121, 145);
     border: 0;
+    border-radius: 0.5rem;
+}
+
+.contact-form input[type="submit"] {
+    background-color: rgba(50, 146, 187, 0.905);
 }
 
 .contact-form *::placeholder {
@@ -84,7 +91,8 @@ html {
 
 .contact-form-response {
     text-align: center;
-    font-size: 1rem
+    font-size: 1rem;
+    color: #fff7f7;
 }
 
 @keyframes show-message {
