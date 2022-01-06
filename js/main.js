@@ -51,6 +51,16 @@ const contactForm = () => { //function for select html-elements.
                 $response.innerHTML = `<p>${json.message}</p>`;
                 $form.reset()
             })
+            .catch(err => {
+                console.log(err);
+                let message = err.statusText || "Ocurrio un error, intente nuevamente";
+                $response.innerHTML = `<p>Error ${err.status} ,${message}</p>`
+            }).finally(() =>
+                setTimeout(() => { //disapear into of 3 seconds and empty var response .
+                    $response.classList.add("none")
+                    $response.innerHTML = ""
+                }, 3000)
+            )
     })
 }
 
