@@ -1,8 +1,8 @@
 const d = document;
 const contactForm = () => { //function for select html-elements.
-    const $form = d.querySelectorAll(".contact-form"),
+    const $form = d.querySelector(".contact-form"),
         $inputRequired = d.querySelectorAll(".contact-form [required]");
-
+    console.log($form);
     $inputRequired.forEach(input => { //Creating span for error and fill.
         const $span = d.createElement("span");
         $span.id = input.name, //set id span with name input.
@@ -12,7 +12,7 @@ const contactForm = () => { //function for select html-elements.
     })
 
     d.addEventListener("keyup", e => {
-        if (e.target.matches(".contact-form [required]")) { //validate for pattern and not pattern.
+        if (e.target.matches(".contact-form [required]")) { //search in element contactform  all  elements  in class required.
             let $input = e.target,
                 pattern = $input.pattern || $input.dataset.pattern; //spreet operator  if $input validate or $textarea validate .
 
@@ -31,6 +31,26 @@ const contactForm = () => { //function for select html-elements.
 
             }
         }
+    })
+
+    d.addEventListener("submit", e => {
+        e.preventDefault();
+        const $loader = d.querySelector(".contact-form-loader"),
+            $response = d.querySelector(".contact-form-response");
+        $loader.classList.remove("none"); //change status class none
+
+
+
+        fetch("https://formsubmit.co/ajax/desarrollopas2@gmail.com", {
+                method: "POST",
+                body: new FormData(e.target) //Creating new form in bass at the form html.
+            }).then(resp => resp.ok ? resp.json() : Promise.reject(resp)) //wait promisse
+            .then(json => {
+                $loader.classList.add("none");
+                $response.classList.remove("none")
+                $response.innerHTML = `<p>${json.message}</p>`;
+                $form.reset()
+            })
     })
 }
 
