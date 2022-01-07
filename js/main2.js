@@ -41,7 +41,7 @@ const contactForm = () => { //function for select html-elements.
 
 
 
-        fetch("https://formsubmit.co/ajax/desarrollopas2@gmail.com", {
+        fetch("server/send_mail.php", {
                 method: "POST",
                 body: new FormData(e.target) //Creating new form in bass at the form html.
             }).then(resp => resp.ok ? resp.json() : Promise.reject(resp)) //wait promisse

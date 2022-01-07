@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Ingrese los datos al formulario</h1>
+                <h1>Ingrese los datos al formulario fetch-php</h1>
                 <form class="contact-form">
                     <input type="text" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Escribe tu nombre" required title="El nombre solo acepta letras y espacios en blanco." required>
                     <input type="email" name="email" placeholder="Escribe tu email" title="Email Incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
 </body>
 
 </html>
